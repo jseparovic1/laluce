@@ -17,22 +17,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      - name: Build and export
+        uses: docker/build-push-action@v5
         with:
-          node-version: '18'
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: |
-          if [ -f package-lock.json ]; then
-            npm ci
-          else
-            npm install
-          fi
-
-      - name: Build
-        run: npm run build
+          context: .
+          target: prod
+          outputs: type=local,dest=./dist
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
