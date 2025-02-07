@@ -9,7 +9,7 @@ CMD ["npm", "run", "dev"]
 
 FROM base as prod
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm install
 COPY . .
 RUN npm run build
 CMD ["npm", "run", "preview"] 
