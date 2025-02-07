@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/laluce/',
+  base: '/laluce.github.io/',
   server: {
     port: 3000,
     open: true, // automatically open browser
@@ -10,7 +10,13 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     minify: 'terser',
-    cssMinify: true
+    cssMinify: true,
+    assetsDir: 'assets',
+    rollupOptions: {
+        input: {
+            main: '/index.html',
+        },
+    }
   },
   css: {
     devSourcemap: true, // enable CSS source maps
