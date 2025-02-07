@@ -1,9 +1,6 @@
 FROM node:18-alpine as base
 WORKDIR /app
 
-# Add `/app/node_modules/.bin` to $PATH
-ENV PATH /app/node_modules/.bin:$PATH
-
 FROM base as dev
 COPY . .
 RUN npm install
