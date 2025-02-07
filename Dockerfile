@@ -11,5 +11,4 @@ FROM base as prod
 COPY package*.json ./
 RUN npm install
 COPY . .
-RUN npm run build
-CMD ["npm", "run", "preview"] 
+RUN mkdir -p dist && npm run build
