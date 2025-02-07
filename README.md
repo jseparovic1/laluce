@@ -1,18 +1,10 @@
 # LaLuce
 
-Beauty salon website.
-
 ## Development
 ```bash
 docker compose up app
 ```
 Development server: http://localhost:5173
-
-## Production
-```bash
-docker compose up app-prod
-```
-Production preview: http://localhost:4173
 
 ## Deploy to GitHub Pages
 
@@ -21,5 +13,3 @@ Production preview: http://localhost:4173
 3. Set source to "GitHub Actions"
 
 The site will be deployed automatically on every push to main branch.
-
-Note: If ports are in use, edit ports in docker-compose.yml 
