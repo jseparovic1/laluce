@@ -1,0 +1,144 @@
+/* Instagram section */
+.instagram {
+    padding: 6rem 2rem;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.instagram::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #bdbfb7, transparent);
+}
+
+.instagram h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #79877c;
+    font-weight: 500;
+    font-size: 2.2rem;
+    position: relative;
+}
+
+.instagram h2::after {
+    content: '';
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 2px;
+    background: #79877c;
+}
+
+.instagram-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.instagram-link {
+    display: block;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #79877c;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: opacity 0.3s ease;
+}
+
+.instagram-link:hover {
+    opacity: 0.8;
+}
+
+.instagram-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(326px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    padding: 0 1rem;
+    justify-items: center;
+}
+
+.instagram-grid .instagram-media {
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 540px !important;
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 1rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.social-links a:hover {
+    opacity: 0.8;
+}
+
+.social-links svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* Update footer to include social links */
+footer {
+    padding: 2rem;
+    background-color: #79877c;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .instagram {
+        padding: 4rem 1rem;
+    }
+
+    .instagram h2 {
+        font-size: 1.8rem;
+        margin-bottom: 3rem;
+    }
+
+    .instagram-link {
+        font-size: 1.1rem;
+    }
+
+    .instagram-grid {
+        grid-template-columns: 1fr;
+        max-width: 540px;
+        margin: 0 auto;
+        padding: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .instagram {
+        padding: 3rem 1rem;
+    }
+
+    .instagram h2 {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+    }
+
+    .instagram-link {
+        font-size: 1rem;
+    }
+} 
