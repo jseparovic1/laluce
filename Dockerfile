@@ -1,17 +1,21 @@
 FROM node:18-alpine as base
 WORKDIR /app
-COPY package*.json ./
 
-# Development stage
+# Add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# Do not run commands as root.
+USER node
+
+COPY . .
+
 FROM base as dev
+RUN npm install
 EXPOSE 3000
-ENV HOST=0.0.0.0
-CMD ["npm", "run", "dev", "--", "--host"]
+CMD ["npm", "run", "dev"]
 
-# Production stage
 FROM base as prod
 COPY . .
 RUN npm install
 RUN npm run build
-ENV HOST=0.0.0.0
-CMD ["npm", "run", "preview", "--", "--host"] 
+CMD ["npm", "run", "preview"] 
