@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/laluce/',  // Replace with your repository name
+  base: '/laluce/',
   server: {
     port: 3000,
     open: true, // automatically open browser
