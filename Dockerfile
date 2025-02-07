@@ -1,18 +1,19 @@
 FROM node:18-alpine as base
 WORKDIR /app
 COPY package*.json ./
+RUN npm ci
 
 # Development stage
 FROM base as dev
-RUN npm install
 COPY . .
 EXPOSE 3000
-CMD ["npm", "run", "dev"]
+ENV HOST=0.0.0.0
+CMD ["npm", "run", "dev", "--", "--host"]
 
 # Production stage
 FROM base as prod
-RUN npm install --production
 COPY . .
 RUN npm run build
 EXPOSE 3000
-CMD ["npm", "run", "preview"] 
+ENV HOST=0.0.0.0
+CMD ["npm", "run", "preview", "--", "--host"] 
