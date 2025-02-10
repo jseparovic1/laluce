@@ -9,4 +9,4 @@ services:
       - .:/app
       - /app/node_modules
     environment:
-      - NODE_ENV=development“
+      - NODE_ENV=development
